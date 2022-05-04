@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Nested Loop</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <br/>
+  <label for="firstNumber">[enter a number between 2 and 10]</label><br/>
+  <input type="number" id="firstNumber" name="firstNumber">
+  <label for="secondNumber">by</label>
+  <input type="number" id="secondNumber" name="secondNumber"><br/><br/>
+  <button onclick="checkFunction()">Click here when ready!</button><br/><br/>
+<div id="div1"></div>
+ <table id="div5"></table>
+  <script>
+    function checkFunction() {
+      var x = document.getElementById("firstNumber").value;
+      var y = document.getElementById("secondNumber").value;
+
+      if ((x<2 || x>10) || (y<2 || y>10)) {
+        window.alert("Please enter a number between 2 and 10");
+      } else {
+        var multi;
+        multi = "<table border='3' width='35px' cellspacing='0' cellpadding='3'>"
+        for (i = 1; i <= x; i++) {
+            multi = multi + "<tr>";
+            for (j = 1; j <= y; j++) {
+              multi = multi + "<td>" + i * j + "</td>";
+            }
+            multi = multi + "</tr>";
+          }
+          multi = multi + "</table>";
+          document.getElementById("div1").innerHTML=multi;
+        }
+      }
+  </script>
+      
+</body>
+
+</html>
